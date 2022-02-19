@@ -1,0 +1,113 @@
+li{
+    display: inline-block;
+    margin-left: 40px;
+}
+
+#header{
+    display: flex;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo{
+    padding: 20px 0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.menu-btn{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #294f85;
+    cursor: pointer;
+    position: fixed;
+    right: 30px;
+    padding: 3px;
+    z-index: 2;
+}
+
+.menu-btn span{
+    display: inline-block;
+    position: relative;
+    background: #FFFFFF;
+    width: 40px;
+    height: 3px;
+}
+
+.menu-btn span:before , .menu-btn span:after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #FFFFFF;
+    position: absolute;
+}
+
+.menu-btn span:before{
+    top: 10px;
+}
+.menu-btn span:after{
+    bottom: 10px;
+
+}
+
+.show-menu span:before{
+    transform: rotate(-40deg);
+    transition: 0.5s;
+}
+.show-menu span:after{
+    transform: rotate(40deg);
+    transition: 0.5s;
+}
+
+.show-menu span:before , .show-menu span:after{
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.show-menu span{
+    background: transparent;
+    transition: 0.5s;
+}
+
+.top-menu.show{
+}
+
+@media (max-width: 992px) {
+    .menu-btn{
+        display: block;
+
+    }
+    .top-menu{
+        display: none;
+    }
+    .mobille-menu-active{
+        display: none;
+    }
+
+    .top-menu.show{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background: yellow;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 1;
+        transition: 0.5s;
+
+    }
+}
